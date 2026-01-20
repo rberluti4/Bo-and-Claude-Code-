@@ -1,0 +1,361 @@
+/* ============================================
+   Personal Portfolio Website Styles
+   ============================================ */
+
+/* CSS Variables for easy customization */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --background: #ffffff;
+    --background-alt: #f9fafb;
+    --border-color: #e5e7eb;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Main Container - Two Column Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Section - Profile Image */
+.left-section {
+    width: 40%;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.profile-image-container {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow-hover);
+    position: relative;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image-container.placeholder .image-placeholder {
+    display: flex;
+}
+
+.image-placeholder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+
+.image-placeholder span {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.image-placeholder small {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+/* Right Section - Content */
+.right-section {
+    width: 60%;
+    padding: 4rem;
+    overflow-y: auto;
+}
+
+/* Bio Section */
+.bio-section {
+    margin-bottom: 3rem;
+}
+
+.bio-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.bio-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Investment Thesis Section */
+.thesis-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--background-alt);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.thesis-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.thesis-section p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.thesis-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.thesis-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Investments Section */
+.investments-section {
+    margin-bottom: 3rem;
+}
+
+.investments-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.investments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.investment-card {
+    padding: 1.5rem;
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.investment-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.investment-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.investment-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.investment-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.investment-link:hover {
+    text-decoration: underline;
+}
+
+/* Social Links Section */
+.socials-section {
+    margin-bottom: 3rem;
+}
+
+.socials-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer */
+.footer {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .left-section {
+        width: 35%;
+    }
+
+    .right-section {
+        width: 65%;
+        padding: 3rem;
+    }
+
+    .bio-section h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 3rem 2rem;
+    }
+
+    .profile-image-container {
+        max-width: 250px;
+    }
+
+    .right-section {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .bio-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .bio-content p {
+        font-size: 1rem;
+    }
+
+    .investments-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        flex-direction: column;
+    }
+
+    .social-link {
+        justify-content: center;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .right-section {
+        padding: 1.5rem;
+    }
+
+    .thesis-section {
+        padding: 1.5rem;
+    }
+
+    .investment-card {
+        padding: 1.25rem;
+    }
+}
